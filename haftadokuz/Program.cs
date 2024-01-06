@@ -16,7 +16,7 @@ namespace haftadokuz
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmOgretmenkayit());
+            Application.Run(new frmOgnKayit());
         }
     }
 }

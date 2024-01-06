@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.ogretmenkayıt = new System.Windows.Forms.GroupBox();
-            this.lblograd = new System.Windows.Forms.Label();
-            this.lblogrsoyad = new System.Windows.Forms.Label();
-            this.lbltc = new System.Windows.Forms.Label();
-            this.txtograd = new System.Windows.Forms.TextBox();
-            this.txtogrsoyad = new System.Windows.Forms.TextBox();
             this.txtogrtc = new System.Windows.Forms.TextBox();
+            this.txtogrsoyad = new System.Windows.Forms.TextBox();
+            this.txtograd = new System.Windows.Forms.TextBox();
+            this.lbltc = new System.Windows.Forms.Label();
+            this.lblogrsoyad = new System.Windows.Forms.Label();
+            this.lblograd = new System.Windows.Forms.Label();
             this.ogrkaydet = new System.Windows.Forms.Button();
             this.ogretmenkayıt.SuspendLayout();
             this.SuspendLayout();
@@ -49,28 +49,31 @@
             this.ogretmenkayıt.Controls.Add(this.lblograd);
             this.ogretmenkayıt.Location = new System.Drawing.Point(27, 28);
             this.ogretmenkayıt.Name = "ogretmenkayıt";
-            this.ogretmenkayıt.Size = new System.Drawing.Size(251, 227);
+            this.ogretmenkayıt.Size = new System.Drawing.Size(304, 227);
             this.ogretmenkayıt.TabIndex = 0;
             this.ogretmenkayıt.TabStop = false;
             this.ogretmenkayıt.Text = "Öğretmen Kayıt";
             // 
-            // lblograd
+            // txtogrtc
             // 
-            this.lblograd.AutoSize = true;
-            this.lblograd.Location = new System.Drawing.Point(11, 46);
-            this.lblograd.Name = "lblograd";
-            this.lblograd.Size = new System.Drawing.Size(20, 13);
-            this.lblograd.TabIndex = 0;
-            this.lblograd.Text = "Ad";
+            this.txtogrtc.Location = new System.Drawing.Point(71, 163);
+            this.txtogrtc.Name = "txtogrtc";
+            this.txtogrtc.Size = new System.Drawing.Size(127, 20);
+            this.txtogrtc.TabIndex = 5;
             // 
-            // lblogrsoyad
+            // txtogrsoyad
             // 
-            this.lblogrsoyad.AutoSize = true;
-            this.lblogrsoyad.Location = new System.Drawing.Point(10, 100);
-            this.lblogrsoyad.Name = "lblogrsoyad";
-            this.lblogrsoyad.Size = new System.Drawing.Size(37, 13);
-            this.lblogrsoyad.TabIndex = 1;
-            this.lblogrsoyad.Text = "Soyad";
+            this.txtogrsoyad.Location = new System.Drawing.Point(71, 100);
+            this.txtogrsoyad.Name = "txtogrsoyad";
+            this.txtogrsoyad.Size = new System.Drawing.Size(127, 20);
+            this.txtogrsoyad.TabIndex = 4;
+            // 
+            // txtograd
+            // 
+            this.txtograd.Location = new System.Drawing.Point(71, 46);
+            this.txtograd.Name = "txtograd";
+            this.txtograd.Size = new System.Drawing.Size(127, 20);
+            this.txtograd.TabIndex = 3;
             // 
             // lbltc
             // 
@@ -81,30 +84,27 @@
             this.lbltc.TabIndex = 2;
             this.lbltc.Text = "TC";
             // 
-            // txtograd
+            // lblogrsoyad
             // 
-            this.txtograd.Location = new System.Drawing.Point(71, 46);
-            this.txtograd.Name = "txtograd";
-            this.txtograd.Size = new System.Drawing.Size(127, 20);
-            this.txtograd.TabIndex = 3;
+            this.lblogrsoyad.AutoSize = true;
+            this.lblogrsoyad.Location = new System.Drawing.Point(10, 100);
+            this.lblogrsoyad.Name = "lblogrsoyad";
+            this.lblogrsoyad.Size = new System.Drawing.Size(37, 13);
+            this.lblogrsoyad.TabIndex = 1;
+            this.lblogrsoyad.Text = "Soyad";
             // 
-            // txtogrsoyad
+            // lblograd
             // 
-            this.txtogrsoyad.Location = new System.Drawing.Point(71, 100);
-            this.txtogrsoyad.Name = "txtogrsoyad";
-            this.txtogrsoyad.Size = new System.Drawing.Size(127, 20);
-            this.txtogrsoyad.TabIndex = 4;
-            // 
-            // txtogrtc
-            // 
-            this.txtogrtc.Location = new System.Drawing.Point(71, 163);
-            this.txtogrtc.Name = "txtogrtc";
-            this.txtogrtc.Size = new System.Drawing.Size(127, 20);
-            this.txtogrtc.TabIndex = 5;
+            this.lblograd.AutoSize = true;
+            this.lblograd.Location = new System.Drawing.Point(11, 46);
+            this.lblograd.Name = "lblograd";
+            this.lblograd.Size = new System.Drawing.Size(20, 13);
+            this.lblograd.TabIndex = 0;
+            this.lblograd.Text = "Ad";
             // 
             // ogrkaydet
             // 
-            this.ogrkaydet.Location = new System.Drawing.Point(105, 272);
+            this.ogrkaydet.Location = new System.Drawing.Point(73, 272);
             this.ogrkaydet.Name = "ogrkaydet";
             this.ogrkaydet.Size = new System.Drawing.Size(84, 37);
             this.ogrkaydet.TabIndex = 6;

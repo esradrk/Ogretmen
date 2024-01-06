@@ -16,6 +16,7 @@ namespace haftadokuz
 {
     public partial class frmOgnKayit : Form
     {
+        public int OgrenciId { get; set; }
         public frmOgnKayit()
         {
             InitializeComponent();
@@ -28,7 +29,7 @@ namespace haftadokuz
             {
                 using (cn = new SqlConnection("Data Source=localhost;Initial Catalog=OkulDbSube2Bil;Integrated Security=true"))
                 {
-                    using (cmd = new SqlCommand($"Insert into tblOgrenciler values(@Ad,@Soyad,@Numara)", cn)//using dispose yapar.Using içine yazılanı dispose eder ve connectionu kapatır.
+                    using (cmd = new SqlCommand($"Insert into tblOgrenciler values(@Ad,@Soyad,@Numara)", cn)
 )
                     {
                     SqlParameter[] p =
@@ -39,18 +40,16 @@ namespace haftadokuz
 
 
                 };
-                cmd.Parameters.AddRange(p);//@ ile başlayan bir şeylerin sqlcommand tarafından algılayabilmesi için bütün parametreleri ekliyoruz
-                cn.Open();
+                cmd.Parameters.AddRange(p); cn.Open();
                 int sonuc = cmd.ExecuteNonQuery();
    
-                return sonuc > 0;//işlem yapılıp yapılmadığını kontrol eder. True  olursa çıkış yaparız. Ama false olursa catch bloğuna atar orada da throw olduğu için yine çıkış olur.
-                    }
+                return sonuc > 0;  }
                 }
                 
             }
             catch (SqlException)
             {
-                throw;//hatayı at(fırlat) anlamına gelir.
+                throw;
                 
             }
             catch (Exception)
@@ -58,15 +57,7 @@ namespace haftadokuz
                
                 throw;
             }
-            //finally//. Bu blok, bir kod bloğu içinde her durumda çalıştırılması gereken kodu içerir.
-            //{
-            //    if (cn != null && cn.State != ConnectionState.Closed)//connectionun durumu kapalı değilse ve nesne yoksa kapat.
-            //    {
-            //        cn.Close();
-            //        cn.Dispose();
-            //      cmd.Dispose();    
-            //    }
-            //}
+           
         }
         private void btnkaydet_Click(object sender, EventArgs e)
         {
@@ -96,12 +87,25 @@ namespace haftadokuz
             }
         }
 
-       
-    }
-}//dispose metodu bellekten atmaya yardım ediyor.
-//interface methotların imzalarını bulunduran yapı. Dispose edilebilir. Tanımlamalar yapılırken I harfiyle başlar.
-//garbage collector: çöp toplayıcı. Bellekten işe  yaramaz dosylara bakıp çöpe atıyor.
-//bazı nesneleri bizim toplamamız(dispose) gerekiyor. Sql işlemleri gibi.
-//cn.dispose() diyerek atabiliriz. 
+        private void btnbul_Click(object sender, EventArgs e)
+        {
+            var frm = new frmOgrBul(this);
+            frm.Show();
+        }
 
-//oğretmen kayıt yap. Tc,ad,soyad
+        private void btnsil_Click(object sender, EventArgs e)
+        {
+            var obl = new OgrenciBL();
+            MessageBox.Show(obl.OgrenciSil(OgrenciId)?"Silme Başarılı":"Silme Başarısız!!!!") ;
+
+
+        }
+
+        private void btnguncelle_Click(object sender, EventArgs e)
+        {
+            var obl = new OgrenciBL();
+            MessageBox.Show(obl.OgrenciGuncelle(new Ogrenci {Ad=txtad.Text.Trim(),Soyad=txtsoyad.Text.Trim(),
+                Numara=txtno.Text.Trim(),OgrenciId= OgrenciId })? "Güncelleme Başarılı":"Güncelleme Başarısız!");
+        }
+    }
+}

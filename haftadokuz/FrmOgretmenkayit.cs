@@ -20,6 +20,7 @@ namespace haftadokuz
         public FrmOgretmenkayit()
         {
             InitializeComponent();
+
         }
     
         private void ogrkaydet_Click(object sender, EventArgs e)
@@ -48,5 +49,8 @@ namespace haftadokuz
                 throw;
             }
         }
+
+       
     }
+
 }

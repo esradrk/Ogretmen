@@ -1,7 +1,6 @@
-﻿using System;
-using System.Data.Common;
+﻿using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
-using System.Configuration;
 
 namespace Okulapp.DAL
 {
@@ -9,7 +8,7 @@ namespace Okulapp.DAL
     {
         SqlConnection cn = null;
         SqlCommand cmd = null;
-        string cstr = ConfigurationManager.ConnectionStrings["cstr"].ConnectionString;//app.configteki connection stringi okuyor.
+        string cstr = ConfigurationManager.ConnectionStrings["cstr"].ConnectionString;
         public int ExecuteNonQuery(string cmdtext, SqlParameter[] p = null)
         {
             using (cn = new SqlConnection(cstr))
@@ -25,8 +24,22 @@ namespace Okulapp.DAL
                 }
             }
         }
+        public SqlDataReader ExecuteReader(string cmdtext, SqlParameter[] p = null)
+        {
+            cn = new SqlConnection(cstr);
 
+            cmd = new SqlCommand(cmdtext, cn);
+                
+                    if (p != null)
+                    {
+                        cmd.Parameters.AddRange(p);
+                    }
+                    cn.Open();
+                    return cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                
+            
+        }
     }
-   
+
 
 }

@@ -36,6 +36,9 @@
             this.lblsoyad = new System.Windows.Forms.Label();
             this.lblad = new System.Windows.Forms.Label();
             this.btnkaydet = new System.Windows.Forms.Button();
+            this.btnbul = new System.Windows.Forms.Button();
+            this.btnsil = new System.Windows.Forms.Button();
+            this.btnguncelle = new System.Windows.Forms.Button();
             this.grpogrenci.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -104,23 +107,55 @@
             this.lblad.Size = new System.Drawing.Size(20, 13);
             this.lblad.TabIndex = 0;
             this.lblad.Text = "Ad";
-           
             // 
             // btnkaydet
             // 
-            this.btnkaydet.Location = new System.Drawing.Point(110, 183);
+            this.btnkaydet.Location = new System.Drawing.Point(102, 183);
             this.btnkaydet.Name = "btnkaydet";
-            this.btnkaydet.Size = new System.Drawing.Size(93, 23);
+            this.btnkaydet.Size = new System.Drawing.Size(104, 36);
             this.btnkaydet.TabIndex = 6;
             this.btnkaydet.Text = "Kaydet";
             this.btnkaydet.UseVisualStyleBackColor = true;
             this.btnkaydet.Click += new System.EventHandler(this.btnkaydet_Click);
             // 
+            // btnbul
+            // 
+            this.btnbul.Location = new System.Drawing.Point(273, 36);
+            this.btnbul.Name = "btnbul";
+            this.btnbul.Size = new System.Drawing.Size(61, 39);
+            this.btnbul.TabIndex = 7;
+            this.btnbul.Text = "BUL";
+            this.btnbul.UseVisualStyleBackColor = true;
+            this.btnbul.Click += new System.EventHandler(this.btnbul_Click);
+            // 
+            // btnsil
+            // 
+            this.btnsil.Location = new System.Drawing.Point(273, 85);
+            this.btnsil.Name = "btnsil";
+            this.btnsil.Size = new System.Drawing.Size(61, 36);
+            this.btnsil.TabIndex = 8;
+            this.btnsil.Text = "SİL";
+            this.btnsil.UseVisualStyleBackColor = true;
+            this.btnsil.Click += new System.EventHandler(this.btnsil_Click);
+            // 
+            // btnguncelle
+            // 
+            this.btnguncelle.Location = new System.Drawing.Point(274, 132);
+            this.btnguncelle.Name = "btnguncelle";
+            this.btnguncelle.Size = new System.Drawing.Size(76, 45);
+            this.btnguncelle.TabIndex = 9;
+            this.btnguncelle.Text = "GUNCELLE";
+            this.btnguncelle.UseVisualStyleBackColor = true;
+            this.btnguncelle.Click += new System.EventHandler(this.btnguncelle_Click);
+            // 
             // frmOgnKayit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(282, 235);
+            this.ClientSize = new System.Drawing.Size(376, 283);
+            this.Controls.Add(this.btnguncelle);
+            this.Controls.Add(this.btnsil);
+            this.Controls.Add(this.btnbul);
             this.Controls.Add(this.btnkaydet);
             this.Controls.Add(this.grpogrenci);
             this.Name = "frmOgnKayit";
@@ -135,12 +170,15 @@
 
         private System.Windows.Forms.GroupBox grpogrenci;
         private System.Windows.Forms.Button btnkaydet;
-        private System.Windows.Forms.TextBox txtno;
-        private System.Windows.Forms.TextBox txtsoyad;
-        private System.Windows.Forms.TextBox txtad;
         private System.Windows.Forms.Label lblno;
         private System.Windows.Forms.Label lblsoyad;
         private System.Windows.Forms.Label lblad;
+        private System.Windows.Forms.Button btnbul;
+        private System.Windows.Forms.Button btnsil;
+        public System.Windows.Forms.TextBox txtno;
+        public System.Windows.Forms.TextBox txtsoyad;
+        public System.Windows.Forms.TextBox txtad;
+        private System.Windows.Forms.Button btnguncelle;
     }
 }
 
