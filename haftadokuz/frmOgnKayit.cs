@@ -20,8 +20,9 @@ namespace haftadokuz
         public frmOgnKayit()
         {
             InitializeComponent();
+            btnsil.Enabled = false; 
         }
-     public  bool ogrenciekle(Ogrenci ogr)
+        public  bool ogrenciekle(Ogrenci ogr)
         {
             SqlConnection cn = null;
             SqlCommand cmd = null;
@@ -84,20 +85,25 @@ namespace haftadokuz
             {
                 throw;
                 MessageBox.Show("Bir Hata Oluştu");
-            }
+            }          
+
         }
 
         private void btnbul_Click(object sender, EventArgs e)
         {
             var frm = new frmOgrBul(this);
             frm.Show();
+          
+
         }
 
         private void btnsil_Click(object sender, EventArgs e)
         {
-            var obl = new OgrenciBL();
+           var obl = new OgrenciBL();            
             MessageBox.Show(obl.OgrenciSil(OgrenciId)?"Silme Başarılı":"Silme Başarısız!!!!") ;
+            
 
+  
 
         }
 
